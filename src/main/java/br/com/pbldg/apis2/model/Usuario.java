@@ -57,6 +57,19 @@ public class Usuario {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	public void fazBesteira(){
+		String s1 = "todahora";
+		String s2 = "opa, quem foi que disse epa?";
+		String s3 = "Igor está 'vivo'";
+		if (s2.equals("todahora")){
+			System.out.println("agora vai");
+		}
+		if (s3.equals("todahora")){
+			System.out.println("agora vai");
+		}
+		if (s1.equals("todahora")) System.out.println("agora vai");
+	}
     
     
 
