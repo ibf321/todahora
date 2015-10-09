@@ -3,6 +3,7 @@ package br.com.pbldg.apis2.controller;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.persistence.EntityManager;
@@ -15,21 +16,16 @@ import br.com.pbldg.apis2.model.Usuario;
 @RequestScoped
 public class UsuarioMB implements Serializable {
 	
-	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 5202799275364383072L;
-	
-	private String nome;
-	
 
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
+	private Usuario usuario;
+	
+	@PostConstruct
+	public void init(){
+		this.usuario = new Usuario();
 	}
 	
 	public void salvar() {
@@ -41,6 +37,14 @@ public class UsuarioMB implements Serializable {
 //		for (Usuario usuario : usuarios) {
 //			System.out.println(usuario.getLogin());
 //		}
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 	
 }
