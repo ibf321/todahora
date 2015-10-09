@@ -11,7 +11,12 @@
 <h:head>
 </h:head>
 <h:body>
-	<p:outputLabel value="Nome"/>
-	<p:inputText value="" pt:placeholder="Digite seu nome" />
+<h:form>
+	<p:panelGrid columns="2">
+		<p:outputLabel id="nome_id" value="Nome"/>
+		<p:inputText id="nome_input" value="#{usuarioMB.nome}" pt:placeholder="Digite seu nome" />
+	</p:panelGrid>
+		<p:commandButton id="botao" value="Salvar" action="#{usuarioMB.salva}" ajax="false"/>
+</h:form>
 </h:body>
 </html>
