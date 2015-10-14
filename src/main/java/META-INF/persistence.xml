@@ -5,8 +5,8 @@
 	<persistence-unit name="todahora">
 		<jta-data-source>java:jboss/datasources/apis2DS</jta-data-source>
 		<properties>
-			<property name="javax.persistence.schema-generation.database.action"
-				value="drop-and-create" />
+<!-- 			<property name="javax.persistence.schema-generation.database.action" -->
+<!-- 				value="create-and-update" /> -->
 
 			<!-- Properties for Hibernate -->
 			<property name="hibernate.show_sql" value="true" />

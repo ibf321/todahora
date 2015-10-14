@@ -4,39 +4,37 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+import javax.ejb.Stateless;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.persistence.EntityManager;
-import javax.persistence.Query;
+import javax.persistence.PersistenceContext;
 
-import br.com.pbldg.apis2.dao.JPAUtil;
 import br.com.pbldg.apis2.model.Usuario;
 
-@ManagedBean(name="usuarioMB")
+@Stateless
 @RequestScoped
+@ManagedBean(name = "usuarioMB")
 public class UsuarioMB implements Serializable {
-	
+
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 5202799275364383072L;
 
+	@PersistenceContext
+	private EntityManager em;
+
 	private Usuario usuario;
-	
+
 	@PostConstruct
-	public void init(){
+	public void init() {
 		this.usuario = new Usuario();
 	}
-	
-	public void salvar() {
-		System.out.println("Foi!");
-		
-//		EntityManager em = JPAUtil.getEntityManager();
-//		Query q = em.createQuery("select a from Usuario a", Usuario.class);
-//		List<Usuario> usuarios = q.getResultList();
-//		for (Usuario usuario : usuarios) {
-//			System.out.println(usuario.getLogin());
-//		}
+
+	@SuppressWarnings("unchecked")
+	public List<Usuario> getUsuarios() {
+		return em.createQuery("select a from Usuario a").getResultList();
 	}
 
 	public Usuario getUsuario() {
@@ -46,5 +44,5 @@ public class UsuarioMB implements Serializable {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-	
+
 }
