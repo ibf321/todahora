@@ -20,11 +20,16 @@ public class UsuarioDao implements Serializable {
 
 	@Transactional
 	public void excluir(Usuario usuario) {
-		this.em.remove(usuario);
+		this.em.remove(this.em.contains(usuario) ? usuario : this.em.merge(usuario) );
 	}
 
 	@SuppressWarnings("unchecked")
 	public List<Usuario> listaUsuarios() {
 		return this.em.createQuery("select u from Usuario u").getResultList();
+	}
+	
+	@Transactional
+	public void salvar(Usuario usuario) {
+		
 	}
 }
