@@ -14,10 +14,10 @@
 <h:form>
 	<p:panelGrid columns="2" >
 		<p:outputLabel id="nome_id" value="Nome"/>
-		<p:inputText id="nome_input" value="#{usuarioMB.usuario.login}" pt:placeholder="Digite seu nome" />
+		<p:inputText id="input_nome_id" value="#{usuarioController.usuario.login}" pt:placeholder="Digite seu nome" />
 	</p:panelGrid>
 	
-	<p:dataTable value="#{usuarioMB.usuarios}" var="usuario">
+	<p:dataTable value="#{usuarioController.usuarios}" var="usuario" emptyMessage="Não existe usuários">
 		<p:column headerText="ID">
 			#{usuario.id}
 		</p:column>
@@ -26,6 +26,11 @@
 		</p:column>
 		<p:column headerText="LOGIN">
 			#{usuario.login}
+		</p:column>
+		<p:column headerText="Excluir">
+			<h:commandLink action="#{usuarioController.excluir(usuario)}">
+				excluir
+	    	</h:commandLink>
 		</p:column>
 	</p:dataTable>
 </h:form>
