@@ -10,6 +10,11 @@ import javax.transaction.Transactional;
 
 import br.com.pbldg.apis2.model.Usuario;
 
+/**
+ * 
+ * @author pablo
+ *
+ */
 @Dependent
 public class UsuarioDao implements Serializable {
 
