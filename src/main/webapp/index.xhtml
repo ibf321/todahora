@@ -11,13 +11,13 @@
 <h:head>
 </h:head>
 <h:body>
-<h:form>
-	<p:panelGrid columns="2" >
-		<p:outputLabel id="nome_id" value="Nome"/>
-		<p:inputText id="input_nome_id" value="#{usuarioController.usuario.login}" pt:placeholder="Digite seu nome" />
-	</p:panelGrid>
+<h:form id="formUsuarios">
 	
-	<p:dataTable value="#{usuarioController.usuarios}" var="usuario" emptyMessage="Não existe usuários">
+	<h1>Usuários</h1>
+	
+	<p:commandButton value="Novo Usário" action="#{usuarioController.irPaginaSalvar}" />
+	
+	<p:dataTable id="usuarioDT" value="#{usuarioController.usuarios}" var="usuario" emptyMessage="Não existe usuários">
 		<p:column headerText="ID">
 			#{usuario.id}
 		</p:column>
@@ -27,10 +27,11 @@
 		<p:column headerText="LOGIN">
 			#{usuario.login}
 		</p:column>
-		<p:column headerText="Excluir">
-			<h:commandLink action="#{usuarioController.excluir(usuario)}">
-				excluir
-	    	</h:commandLink>
+		<p:column headerText="Ações">
+			<p:commandButton action="#{usuarioController.excluir(usuario)}" value="Excluir" />
+			<p:commandButton action="#{usuarioController.irPaginaAtualizar}" value="Atualizar">
+				<f:setPropertyActionListener value="#{usuario}" target="#{usuarioController.usuario}"/>				
+	    	</p:commandButton>
 		</p:column>
 	</p:dataTable>
 </h:form>
