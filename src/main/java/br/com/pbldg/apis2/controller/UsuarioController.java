@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.SessionScoped;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -12,7 +12,7 @@ import br.com.pbldg.apis2.dao.UsuarioDao;
 import br.com.pbldg.apis2.model.Usuario;
 
 @Named
-@SessionScoped
+@RequestScoped
 public class UsuarioController implements Serializable {
 
 	/**
@@ -57,9 +57,11 @@ public class UsuarioController implements Serializable {
 	public String irPaginaAtualizar(){
 		return "pages/usuario/atualizar?faces-redirect=true";
 	}
+	
 	public String irPaginaSalvar(){
 		return "pages/usuario/cadastrar?faces-redirect=true";
 	}
+	
 	public String atualizar(){
 		this.usuarioDao.atualizar(this.usuario);
 		this.usuario = new Usuario();

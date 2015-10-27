@@ -3,7 +3,7 @@ package br.com.pbldg.apis2.dao;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.enterprise.context.Dependent;
+import javax.enterprise.context.RequestScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
@@ -15,7 +15,7 @@ import br.com.pbldg.apis2.model.Usuario;
  * @author pablo
  *
  */
-@Dependent
+@RequestScoped
 public class UsuarioDao implements Serializable {
 
 	private static final long serialVersionUID = 5233215231835772290L;
