@@ -7,6 +7,7 @@ import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.transaction.Transactional;
 
 import br.com.pbldg.apis2.dao.UsuarioDao;
 import br.com.pbldg.apis2.model.Usuario;
@@ -21,9 +22,9 @@ public class UsuarioController implements Serializable {
 	private static final long serialVersionUID = 5202799275364383072L;
 
 	private Usuario usuario;
-	
+
 	private List<Usuario> listaUsuarios;
-	
+
 	@Inject
 	private UsuarioDao usuarioDao;
 
@@ -33,7 +34,7 @@ public class UsuarioController implements Serializable {
 	}
 
 	public List<Usuario> getUsuarios() {
-		if (this.listaUsuarios == null || this.listaUsuarios.isEmpty()){
+		if (this.listaUsuarios == null || this.listaUsuarios.isEmpty()) {
 			this.listaUsuarios = usuarioDao.listaUsuarios();
 		}
 		return this.listaUsuarios;
@@ -46,37 +47,39 @@ public class UsuarioController implements Serializable {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-	
-	public String excluir(Usuario usuario){
+
+	public String excluir() {
 		this.usuarioDao.excluir(usuario);
 		this.listaUsuarios = usuarioDao.listaUsuarios();
 		this.usuario = new Usuario();
 		return "index?faces-redirect=true";
 	}
-	
-	public String irPaginaAtualizar(){
-		return "pages/usuario/atualizar?faces-redirect=true";
+
+	public String irPaginaAtualizar(Usuario usuario) {
+		this.usuario = usuario;
+		return "pages/usuario/atualizar";
 	}
-	
-	public String irPaginaSalvar(){
+
+	public String irPaginaSalvar() {
 		return "pages/usuario/cadastrar?faces-redirect=true";
 	}
-	
-	public String atualizar(){
+
+	@Transactional
+	public String atualizar() {
 		this.usuarioDao.atualizar(this.usuario);
 		this.usuario = new Usuario();
-		return "/index?faces-redirect=true";
+		return "/index";
 	}
-	
-	public String salvar(){
+
+	public String salvar() {
 		this.usuarioDao.salvar(this.usuario);
 		this.listaUsuarios = usuarioDao.listaUsuarios();
 		this.usuario = new Usuario();
-		return "/index?faces-redirect=true";
+		return "/index";
 	}
-	
-	public String voltar(){
-		return "/index?faces-redirect=true";
+
+	public String voltar() {
+		return "/index";
 	}
 
 	public List<Usuario> getListaUsuarios() {

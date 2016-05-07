@@ -11,13 +11,18 @@
 <h:head>
 </h:head>
 <h:body>
-<h:form id="formUsuarios">
+<h:form id="form">
 	
 	<h1>Usuários</h1>
 	
-	<p:commandButton value="Novo Usário" action="#{usuarioController.irPaginaSalvar}" />
+	<p:commandButton value="Novo Usário" action="#{usuarioController.irPaginaSalvar()}" />
 	
-	<p:dataTable id="usuarioDT" value="#{usuarioController.usuarios}" var="usuario" emptyMessage="Não existe usuários">
+	<p:dataTable id="usuarioDT" 
+			value="#{usuarioController.usuarios}" 
+			var="usuario" 
+			emptyMessage="Não existe usuários" 
+			lazy="true"
+			selection="#{usuarioController.usuario}" >
 		<p:column headerText="ID">
 			#{usuario.id}
 		</p:column>
@@ -28,10 +33,10 @@
 			#{usuario.login}
 		</p:column>
 		<p:column headerText="Ações">
-			<p:commandButton action="#{usuarioController.excluir(usuario)}" value="Excluir" />
-			<p:commandButton action="#{usuarioController.irPaginaAtualizar}" value="Atualizar">
-				<f:setPropertyActionListener value="usuario" target="#{usuarioController.usuario}"/>
-	    	</p:commandButton>
+			<p:commandButton action="#{usuarioController.excluir(usuario)}" value="Excluir">
+				<f:setPropertyActionListener value="#{usuario}" target="#{usuarioController.usuario}"/>
+			</p:commandButton>
+			<p:commandButton action="#{usuarioController.irPaginaAtualizar(usuario)}" value="Atualizar" process="@form"/>
 		</p:column>
 	</p:dataTable>
 </h:form>

@@ -1,9 +1,9 @@
 package br.com.pbldg.apis2.dao;
 
-import java.io.Serializable;
 import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
@@ -15,11 +15,10 @@ import br.com.pbldg.apis2.model.Usuario;
  * @author pablo
  *
  */
+@Named
 @RequestScoped
-public class UsuarioDao implements Serializable {
+public class UsuarioDao {
 
-	private static final long serialVersionUID = 5233215231835772290L;
-	
 	@PersistenceContext
 	private EntityManager em;
 
@@ -38,7 +37,6 @@ public class UsuarioDao implements Serializable {
 		this.em.merge(usuario);
 	}
 
-	@Transactional
 	public void atualizar(Usuario usuario) {
 		this.em.merge(usuario);
 	}

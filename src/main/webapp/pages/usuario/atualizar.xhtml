@@ -11,9 +11,11 @@
 <h:head>
 </h:head>
 <h:body>
-<h:form>
+<h:form id="form">
 	<h1>Atualização de usuário</h1>
 	<p:panelGrid columns="2" >
+		<p:outputLabel id="id_o" value="Id"/>
+		<p:inputText id="id" value="#{usuarioController.usuario.id}" />
 		<p:outputLabel id="email_o" value="Email"/>
 		<p:inputText id="email" value="#{usuarioController.usuario.email}" pt:placeholder="Digite seu email" />
 		<p:outputLabel id="login_o" value="Login"/>
@@ -23,7 +25,7 @@
 	</p:panelGrid>
 	
 	<p:panelGrid columns="2">
-		<p:commandButton value="Confirmar Atualização" action="#{usuarioController.atualizar}"/>
+		<p:commandButton value="Confirmar Atualização" actionListener="#{usuarioController.atualizar}" process="@form"/>
 		<p:commandButton value="Voltar" action="#{usuarioController.voltar}"/>
 	</p:panelGrid>
 	
