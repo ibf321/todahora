@@ -19,7 +19,6 @@ public class MessageClientGet {
 
     public static void main(String args[]){
     	
-    	
     	try {
 	    	ResteasyClient client = new ResteasyClientBuilder().build();
 	    	
@@ -38,7 +37,7 @@ public class MessageClientGet {
 	        System.out.println("====> Status da resposta: " + response.getStatus() + "\n");
 	
 	        String resposta = response.readEntity(String.class);
-	        System.out.println("====> Resporta do servidor:");
+	        System.out.println("====> Resposta do servidor:");
 	        System.out.println( resposta + "\n");
 	
 	        Gson gson = new Gson();

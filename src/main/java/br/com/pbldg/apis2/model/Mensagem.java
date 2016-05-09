@@ -1,12 +1,19 @@
 package br.com.pbldg.apis2.model;
 
+import java.io.Serializable;
+
 /**
  * @author <a href="mailto:pablol@cicoti.com.br">Pablo Diego</a>
  * 
  */
-public class Mensagem {
+public class Mensagem implements Serializable {
 
-    private String cabecalho;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 3256652952240186509L;
+
+	private String cabecalho;
 
     private String corpo;
 

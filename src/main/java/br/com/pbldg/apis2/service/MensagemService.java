@@ -1,9 +1,12 @@
 package br.com.pbldg.apis2.service;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 import br.com.pbldg.apis2.model.Mensagem;
 
@@ -12,7 +15,7 @@ import br.com.pbldg.apis2.model.Mensagem;
  * 
  * @author <a href="mailto:pablo@cicoti.com.br">Pablo Diego</a>
  */
-@Path("/messages")
+@Path("/mensagem")
 public class MensagemService {
 
     /**
@@ -20,7 +23,7 @@ public class MensagemService {
      * @return Objeto mensagem com um conteúdo estático via json.
      */
     @GET
-    @Path("/messageJSON")
+    @Path("/mensagemGetJson")
     @Produces({MediaType.APPLICATION_JSON + ";charset=utf-8"} )
     public Mensagem getMessageJSON(){
         Mensagem mensagem = new Mensagem();
@@ -29,8 +32,12 @@ public class MensagemService {
         return mensagem;
     }
     
-    public Integer getTamanhoMensagemBytes(){
-    	return 0;
+    @POST
+    @Path("/mensagemPostJson")
+    @Consumes({MediaType.APPLICATION_JSON})
+    public Response consomeMensagemJSON(Mensagem mensagem){
+    	String result = "Product created : " + mensagem;
+		return Response.status(201).entity(result).build();
     }
     
     
