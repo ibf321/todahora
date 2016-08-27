@@ -10,7 +10,8 @@ Ambiente:
 - maven
 
 Configuração do datasource no wildfly-9.0.1.Final/standalone/configuration/standalone.xml:
-`                <datasource jta="true" jndi-name="java:jboss/datasources/apis2DS" pool-name="apis2DS" enabled="true" use-java-context="true">
+```
+                <datasource jta="true" jndi-name="java:jboss/datasources/apis2DS" pool-name="apis2DS" enabled="true" use-java-context="true">
                     <connection-url>jdbc:postgresql://192.168.99.100:5432/dbcico</connection-url>
                     <driver>postgresql</driver>
                     <transaction-isolation>TRANSACTION_READ_COMMITTED</transaction-isolation>
@@ -31,20 +32,23 @@ Configuração do datasource no wildfly-9.0.1.Final/standalone/configuration/sta
                         <track-statements>true</track-statements>
                         <share-prepared-statements>false</share-prepared-statements>
                     </statement>
-                </datasource>`
+                </datasource>
+```
                 
 Configuração do driver em wildfly-9.0.1.Final/standalone/configuration/standalone.xml:
-`                <drivers>
+```                <drivers>
                     <driver name="h2" module="com.h2database.h2">
                         <xa-datasource-class>org.h2.jdbcx.JdbcDataSource</xa-datasource-class>
                     </driver>
                     <driver name="postgresql" module="org.postgresql">
                         <xa-datasource-class>org.postgresql.xa.PGXADataSource</xa-datasource-class>
                     </driver>
-                </drivers>`
+                </drivers>
+```
 
 Configuração do módulo do driver em wildfly-9.0.1.Final/modules/system/layers/base/org/postgresql/main/module.xml:
-`
+
+```
 <?xml version="1.0" encoding="UTF-8"?>
 <module xmlns="urn:jboss:module:1.3" name="org.postgresql">
 
@@ -57,4 +61,4 @@ Configuração do módulo do driver em wildfly-9.0.1.Final/modules/system/layers
         <module name="javax.servlet.api" optional="true"/>
     </dependencies>
 </module>
-`
+```
