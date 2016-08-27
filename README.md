@@ -36,7 +36,8 @@ Configuração do datasource no wildfly-9.0.1.Final/standalone/configuration/sta
 ```
                 
 Configuração do driver em wildfly-9.0.1.Final/standalone/configuration/standalone.xml:
-```                <drivers>
+```                
+                <drivers>
                     <driver name="h2" module="com.h2database.h2">
                         <xa-datasource-class>org.h2.jdbcx.JdbcDataSource</xa-datasource-class>
                     </driver>
