@@ -4,6 +4,7 @@ Projeto JEE desenvolvido para fins educativos.
 
 Ambiente:
 - Eclipse
+-- instalar o plugin 'jboss tools' pelo MarketPlace antes de configurar o container
 - postgresql
 - driver postgresql
 - wildfly

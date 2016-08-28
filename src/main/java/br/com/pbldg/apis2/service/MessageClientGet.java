@@ -26,9 +26,6 @@ public class MessageClientGet {
 	    	
 	    	Response response = target.request().get();
 	    	
-            // Exemplo de requisição post:
-//	    	Response response = target.request().post(Entity.entity(msg, "application/json"));
-	
 	        if (response.getStatus() != 200) {
 	            throw new RuntimeException("Failed : HTTP error code : "
 	                    + response.getStatus());

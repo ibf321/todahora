@@ -33,7 +33,7 @@
 			#{usuario.login}
 		</p:column>
 		<p:column headerText="Ações">
-			<p:commandButton action="#{usuarioController.excluir(usuario)}" value="Excluir">
+			<p:commandButton action="#{usuarioController.excluir()}" value="Excluir">
 				<f:setPropertyActionListener value="#{usuario}" target="#{usuarioController.usuario}"/>
 			</p:commandButton>
 			<p:commandButton action="#{usuarioController.irPaginaAtualizar(usuario)}" value="Atualizar" process="@form"/>

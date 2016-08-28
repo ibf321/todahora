@@ -22,9 +22,7 @@ public class MensagemService {
      * Método utilizado para recuperar uma mensagem estática.
      * @return Objeto mensagem com um conteúdo estático via json.
      */
-    @GET
-    @Path("/mensagemGetJson")
-    @Produces({MediaType.APPLICATION_JSON + ";charset=utf-8"} )
+    @GET @Path("/mensagemGetJson") @Produces({MediaType.APPLICATION_JSON + ";charset=utf-8"} )
     public Mensagem getMessageJSON(){
         Mensagem mensagem = new Mensagem();
         mensagem.setCabecalho("Cabeçalho");

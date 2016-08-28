@@ -13,7 +13,7 @@ public class OpaResource {
     @GET
     @Produces({MediaType.TEXT_PLAIN})
     public String helloResource() {
-        return "Opa!!! Hora agora é: " + Instant.now();
+        return "Opa!!! Instante: " + Instant.now();
     }
 
 }
