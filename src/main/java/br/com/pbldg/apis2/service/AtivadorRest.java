@@ -8,7 +8,7 @@ import javax.ws.rs.core.Application;
  * 
  * @author <a href="mailto:pablo@cicoti.com.br">Pablo Diego</a>
  */
-@ApplicationPath("/")
+@ApplicationPath("/rest")
 public class AtivadorRest extends Application {
 
 }

@@ -5,40 +5,40 @@
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
-	xmlns:p="http://primefaces.org/ui"
 	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
 
-<h:head>
-</h:head>
+<h:head></h:head>
+
 <h:body>
 <h:form id="form">
 	
 	<h1>Usuários</h1>
+	<h:commandButton value="Novo Usário" action="#{usuarioController.irPaginaSalvar()}" />
 	
-	<p:commandButton value="Novo Usário" action="#{usuarioController.irPaginaSalvar()}" />
-	
-	<p:dataTable id="usuarioDT" 
+	<h:dataTable id="usuarioDT" 
 			value="#{usuarioController.usuarios}" 
-			var="usuario" 
-			emptyMessage="Não existe usuários" 
-			lazy="true"
-			selection="#{usuarioController.usuario}" >
-		<p:column headerText="ID">
+			var="usuario" >
+			
+		<h:column>
+			<f:facet name="header">ID</f:facet>
 			#{usuario.id}
-		</p:column>
-		<p:column headerText="E-MAIL">
+		</h:column>
+		<h:column>
+			<f:facet name="header">E-MAIL</f:facet>
 			#{usuario.email}
-		</p:column>
-		<p:column headerText="LOGIN">
+		</h:column>
+		<h:column>
+			<f:facet name="header">LOGIN</f:facet>
 			#{usuario.login}
-		</p:column>
-		<p:column headerText="Ações">
-			<p:commandButton action="#{usuarioController.excluir()}" value="Excluir">
+		</h:column>
+		<h:column>
+			<f:facet name="header">AÇÕES</f:facet>
+			<h:commandButton action="#{usuarioController.excluir()}" value="Excluir">
 				<f:setPropertyActionListener value="#{usuario}" target="#{usuarioController.usuario}"/>
-			</p:commandButton>
-			<p:commandButton action="#{usuarioController.irPaginaAtualizar(usuario)}" value="Atualizar" process="@form"/>
-		</p:column>
-	</p:dataTable>
+			</h:commandButton>
+			<h:commandButton action="#{usuarioController.irPaginaAtualizar(usuario)}" value="Atualizar" process="@form"/>
+		</h:column>
+	</h:dataTable>
 </h:form>
 </h:body>
 </html>

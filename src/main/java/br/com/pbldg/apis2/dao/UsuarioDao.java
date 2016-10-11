@@ -2,7 +2,7 @@ package br.com.pbldg.apis2.dao;
 
 import java.util.List;
 
-import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.Dependent;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -16,10 +16,10 @@ import br.com.pbldg.apis2.model.Usuario;
  *
  */
 @Named
-@RequestScoped
+@Dependent
 public class UsuarioDao {
 
-	@PersistenceContext
+	@PersistenceContext(unitName="todahora")
 	private EntityManager em;
 
 	@Transactional

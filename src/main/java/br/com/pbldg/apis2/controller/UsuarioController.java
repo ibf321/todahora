@@ -12,6 +12,8 @@ import javax.transaction.Transactional;
 import br.com.pbldg.apis2.dao.UsuarioDao;
 import br.com.pbldg.apis2.model.Usuario;
 
+
+
 @Named
 @RequestScoped
 public class UsuarioController implements Serializable {
@@ -41,7 +43,7 @@ public class UsuarioController implements Serializable {
 	}
 
 	public Usuario getUsuario() {
-		return usuario;
+		return this.usuario;
 	}
 
 	public void setUsuario(Usuario usuario) {
