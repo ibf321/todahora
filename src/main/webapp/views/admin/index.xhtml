@@ -7,11 +7,19 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
 
-<h:head></h:head>
+<h:head>
+	<title>Toda Hora</title>
+</h:head>
 
 <h:body>
+<form action="${request.contextPath}/logout" method="post">
+	<input type="submit" value="Logout"/>
+	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>		
+</form> 
 <h:form id="form">
-	
+	<p>
+      <b>Olá, <h:outputText value="#{request.remoteUser}"/>! </b>
+    </p>	
 	<h1>Usuários</h1>
 	<h:commandButton value="Novo Usário" action="#{usuarioController.irPaginaSalvar()}" />
 	
@@ -39,6 +47,7 @@
 			<h:commandButton action="#{usuarioController.irPaginaAtualizar(usuario)}" value="Atualizar" process="@form"/>
 		</h:column>
 	</h:dataTable>
+	<input type="hidden" name="#{_csrf.parameterName}" value="#{_csrf.token}"/>
 </h:form>
 </h:body>
 </html>

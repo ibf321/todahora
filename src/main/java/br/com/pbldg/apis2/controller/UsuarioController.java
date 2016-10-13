@@ -59,29 +59,29 @@ public class UsuarioController implements Serializable {
 
 	public String irPaginaAtualizar(Usuario usuario) {
 		this.usuario = usuario;
-		return "pages/usuario/atualizar";
+		return "usuario/atualizar";
 	}
 
 	public String irPaginaSalvar() {
-		return "pages/usuario/cadastrar?faces-redirect=true";
+		return "usuario/cadastrar?faces-redirect=true";
 	}
 
 	@Transactional
 	public String atualizar() {
 		this.usuarioDao.atualizar(this.usuario);
 		this.usuario = new Usuario();
-		return "/index";
+		return "../index";
 	}
 
 	public String salvar() {
 		this.usuarioDao.salvar(this.usuario);
 		this.listaUsuarios = usuarioDao.listaUsuarios();
 		this.usuario = new Usuario();
-		return "/index";
+		return "../index";
 	}
 
 	public String voltar() {
-		return "/index";
+		return "/index?faces-redirect=true";
 	}
 
 	public List<Usuario> getListaUsuarios() {
@@ -91,5 +91,5 @@ public class UsuarioController implements Serializable {
 	public void setListaUsuarios(List<Usuario> listaUsuarios) {
 		this.listaUsuarios = listaUsuarios;
 	}
-
+	
 }
