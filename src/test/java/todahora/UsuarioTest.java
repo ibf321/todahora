@@ -2,7 +2,7 @@ package todahora;
 
 import org.junit.Test;
 
-import br.com.pbldg.apis2.model.Usuario;
+import br.com.pbldg.todahora.model.Usuario;
 import junit.framework.Assert;
 
 public class UsuarioTest {

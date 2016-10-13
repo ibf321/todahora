@@ -1,4 +1,4 @@
-package br.com.pbldg.apis2.security;
+package br.com.pbldg.todahora.security;
 
 import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 

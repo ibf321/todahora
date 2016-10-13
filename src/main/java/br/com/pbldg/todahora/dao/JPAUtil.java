@@ -1,4 +1,4 @@
-package br.com.pbldg.apis2.dao;
+package br.com.pbldg.todahora.dao;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

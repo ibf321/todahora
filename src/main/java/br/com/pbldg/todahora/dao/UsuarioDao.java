@@ -1,4 +1,4 @@
-package br.com.pbldg.apis2.dao;
+package br.com.pbldg.todahora.dao;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
-import br.com.pbldg.apis2.model.Usuario;
+import br.com.pbldg.todahora.model.Usuario;
 
 /**
  * 

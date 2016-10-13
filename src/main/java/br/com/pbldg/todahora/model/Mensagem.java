@@ -1,4 +1,4 @@
-package br.com.pbldg.apis2.model;
+package br.com.pbldg.todahora.model;
 
 import java.io.Serializable;
 

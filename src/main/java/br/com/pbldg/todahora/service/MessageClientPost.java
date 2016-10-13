@@ -1,4 +1,4 @@
-package br.com.pbldg.apis2.service;
+package br.com.pbldg.todahora.service;
 
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.core.MediaType;
@@ -8,7 +8,7 @@ import org.jboss.resteasy.client.jaxrs.ResteasyClient;
 import org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder;
 import org.jboss.resteasy.client.jaxrs.ResteasyWebTarget;
 
-import br.com.pbldg.apis2.model.Mensagem;
+import br.com.pbldg.todahora.model.Mensagem;
 
 /**
  * Created by pablo on 5/5/16.

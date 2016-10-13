@@ -1,4 +1,4 @@
-package br.com.pbldg.apis2.controller;
+package br.com.pbldg.todahora.controller;
 
 import java.io.Serializable;
 import java.util.List;
@@ -9,8 +9,8 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.transaction.Transactional;
 
-import br.com.pbldg.apis2.dao.UsuarioDao;
-import br.com.pbldg.apis2.model.Usuario;
+import br.com.pbldg.todahora.dao.UsuarioDao;
+import br.com.pbldg.todahora.model.Usuario;
 
 
 

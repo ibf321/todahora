@@ -1,4 +1,4 @@
-package br.com.pbldg.apis2.service;
+package br.com.pbldg.todahora.service;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -8,7 +8,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import br.com.pbldg.apis2.model.Mensagem;
+import br.com.pbldg.todahora.model.Mensagem;
 
 /**
  * Classe responsável por tratar serviços REST da entidade Mensagem.

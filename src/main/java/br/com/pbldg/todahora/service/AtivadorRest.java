@@ -1,4 +1,4 @@
-package br.com.pbldg.apis2.service;
+package br.com.pbldg.todahora.service;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
