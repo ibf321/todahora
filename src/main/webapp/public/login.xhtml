@@ -15,7 +15,7 @@
 			<legend>Login</legend>
 		
 			<!-- Show alerts -->
-			<h:panelGroup rendered="#{param.erro != null}">  
+			<h:panelGroup rendered="#{param.error != null}">  
 				<p>Dados inválidos.</p>  
 			</h:panelGroup> 
 			<h:panelGroup rendered="#{param.logout != null}">  
@@ -30,7 +30,7 @@
 				<input type="password" id="password" name="password"/>
 			</h:panelGrid>
 			
-			<button type="submit">Login</button>
+			<input type="submit" value="Entrar"/>
 				
 			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 		</fieldset>
