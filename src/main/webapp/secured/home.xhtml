@@ -4,16 +4,20 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"> 
 
-<h:head>
-	<title>HOME</title>
-</h:head> 
-<h:body> 
-<form action="${request.contextPath}/logout" method="post">
-	<div align="right">
-		Oi, <h:outputText value="#{request.remoteUser}"/>!
+<ui:composition template="/resources/template/layout.xhtml">
+<ui:define name="content">
+
+	<div>
+		<h:panelGrid columns="2">
+			Conteúdo do HomeController: <h:outputText value="#{homeController.todahora}" />
+		</h:panelGrid>
 	</div>
-	<input type="submit" value="Sair"/>
-	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>		
-</form> 
-</h:body> 
+		
+</ui:define>
+</ui:composition>
+
+ 
+
+
+ 
 </html>

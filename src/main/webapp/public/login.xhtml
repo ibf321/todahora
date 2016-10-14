@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+	<title>Login Toda Hora</title>
+</h:head> 
+<h:body>
+         
+	<form id="login_form" name="login_form" action="#{request.contextPath}/login" method="post">
+		<fieldset>
+			<legend>Login</legend>
+		
+			<!-- Show alerts -->
+			<h:panelGroup rendered="#{param.erro != null}">  
+				<p>Dados inválidos.</p>  
+			</h:panelGroup> 
+			<h:panelGroup rendered="#{param.logout != null}">  
+				<p>Logout efetuado com sucesso.</p>  
+			</h:panelGroup>
+			
+			<!-- Login fields -->
+			<h:panelGrid columns="2">
+				<h:outputLabel value="Usuário"/>
+				<input type="text" id="username" name="username"/>
+				<h:outputLabel value="Senha"/>
+				<input type="password" id="password" name="password"/>
+			</h:panelGrid>
+			
+			<button type="submit">Login</button>
+				
+			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+		</fieldset>
+	</form>
+</h:body> 
+</html>

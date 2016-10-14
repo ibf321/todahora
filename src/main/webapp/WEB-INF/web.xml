@@ -7,7 +7,7 @@
 
 	<!-- Welcome page -->
 	<welcome-file-list>
-		<welcome-file>login.jsf</welcome-file>
+		<welcome-file>public/login.xhtml</welcome-file>
 	</welcome-file-list>
 
 	<context-param>
