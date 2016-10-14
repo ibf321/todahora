@@ -4,6 +4,7 @@
 target/*
 .settings/*
 /target/
+/bin/
 .tern-project
 *.faces-config.xml.jsfdia
 *.DS_Store
