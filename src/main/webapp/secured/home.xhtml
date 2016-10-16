@@ -5,20 +5,14 @@
       xmlns:h="http://java.sun.com/jsf/html"> 
 
 <ui:composition template="/resources/template/layout.xhtml">
-<ui:define name="content">
-
-	<h:form>
-		<h:panelGrid columns="2"  >
-			<h:outputText value="Chamando HomeController:" /> 
-			<h:outputText value="#{homeController.todahora}" />
-		</h:panelGrid>
-	</h:form>
-		
-</ui:define>
+	<ui:define name="main-content">
+		<h:form>
+			<h:panelGrid columns="2"  >
+				<h:outputText value="Chamando HomeController:" /> 
+				<h:outputText value="#{homeController.todahora}" />
+			</h:panelGrid>
+		</h:form>
+	</ui:define>
 </ui:composition>
 
- 
-
-
- 
 </html>
