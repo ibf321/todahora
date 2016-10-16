@@ -5,35 +5,43 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"> 
 
-<h:head>
-	<title>Login Toda Hora</title>
-</h:head> 
-<h:body>
-         
+<ui:composition template="/resources/template/layout_login.xhtml">
+
+<ui:define name="pageTitle">Login Toda Hora</ui:define>
+
+<ui:define name="content">
+
 	<form id="login_form" name="login_form" action="#{request.contextPath}/login" method="post">
 		<fieldset>
 			<legend>Login</legend>
 		
 			<!-- Show alerts -->
 			<h:panelGroup rendered="#{param.error != null}">  
-				<p>Dados inválidos.</p>  
+				<div class="alert alert-danger" role="alert">
+					Usuário/senha inválidos  
+				</div>
 			</h:panelGroup> 
-			<h:panelGroup rendered="#{param.logout != null}">  
-				<p>Logout efetuado com sucesso.</p>  
+			<h:panelGroup rendered="#{param.logout != null}">
+				<div class="alert alert-success" role="alert">
+					Logout efetuado com sucesso  
+				</div>
 			</h:panelGroup>
 			
 			<!-- Login fields -->
-			<h:panelGrid columns="2">
+			<h:panelGrid columns="2" >
 				<h:outputLabel value="Usuário"/>
 				<input type="text" id="username" name="username"/>
 				<h:outputLabel value="Senha"/>
 				<input type="password" id="password" name="password"/>
 			</h:panelGrid>
 			
-			<input type="submit" value="Entrar"/>
+			<input type="submit" value="Entrar" class="btn btn-primary"/>
 				
 			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 		</fieldset>
 	</form>
-</h:body> 
+		
+</ui:define>
+</ui:composition>
+         
 </html>

@@ -7,11 +7,12 @@
 <ui:composition template="/resources/template/layout.xhtml">
 <ui:define name="content">
 
-	<div>
-		<h:panelGrid columns="2">
-			Conteúdo do HomeController: <h:outputText value="#{homeController.todahora}" />
+	<h:form>
+		<h:panelGrid columns="2"  >
+			<h:outputText value="Chamando HomeController:" /> 
+			<h:outputText value="#{homeController.todahora}" />
 		</h:panelGrid>
-	</div>
+	</h:form>
 		
 </ui:define>
 </ui:composition>

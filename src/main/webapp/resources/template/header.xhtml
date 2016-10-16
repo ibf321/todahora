@@ -6,11 +6,20 @@
       xmlns:h="http://java.sun.com/jsf/html">
 
 	<ui:composition>
-	
-		<h1>Header Padrão</h1>
-		<div>
-			<h3>Olá, <h:outputText value="#{request.remoteUser}"/>!</h3>
+
+	<nav class="navbar navbar-inverse">
+		<div class="container" >
+			<p class="navbar-text navbar-left">Toda Hora</p>
+			<h:panelGroup rendered="#{request.remoteUser != null}" layout="block">
+				<form action="${request.contextPath}/logout" method="post">	
+					<h:outputText value="Olá, #{request.remoteUser}!" class="navbar-text navbar-left"/>
+					<input type="submit" class="btn btn-default navbar-btn navbar-right" value="Sair"  />
+					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+				</form>
+			</h:panelGroup>
 		</div>
+	</nav>
+	
 		
 	</ui:composition>
 	
