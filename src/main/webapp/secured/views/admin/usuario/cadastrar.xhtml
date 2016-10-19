@@ -11,15 +11,13 @@
 <h:head>
 </h:head>
 <h:body>
-<h:form>
+<h:form id="cadastrarUsuarioForm" prependId="true">
 	<h1>Adicionar usuário</h1>
 	<p:panelGrid columns="2" >
 		<p:outputLabel id="email_o" value="Email"/>
-		<p:inputText id="email" value="#{usuarioController.usuario.email}" pt:placeholder="Digite seu email" />
-		<p:outputLabel id="login_o" value="Login"/>
-		<p:inputText id="login" value="#{usuarioController.usuario.login}" pt:placeholder="Digite seu login" />
-		<p:outputLabel id="senha_o" value="Senha"/>
-		<p:inputText id="input_nome_id" type="password" value="#{usuarioController.usuario.senha}" pt:placeholder="Digite sua senha" />
+		<p:inputText id="email" value="#{usuarioController.usuario.email}" pt:placeholder="E-mail" />
+		<p:outputLabel id="password_o" value="password"/>
+		<p:inputText id="password" type="password" value="#{usuarioController.usuario.password}" pt:placeholder="Password" />
 	</p:panelGrid>
 	
 	<p:panelGrid columns="2">

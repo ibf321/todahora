@@ -36,10 +36,6 @@
 			#{usuario.email}
 		</h:column>
 		<h:column>
-			<f:facet name="header">LOGIN</f:facet>
-			#{usuario.login}
-		</h:column>
-		<h:column>
 			<f:facet name="header">AÇÕES</f:facet>
 			<h:commandButton action="#{usuarioController.excluir()}" value="Excluir">
 				<f:setPropertyActionListener value="#{usuario}" target="#{usuarioController.usuario}"/>
